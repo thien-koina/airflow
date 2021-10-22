@@ -8,7 +8,7 @@ PYTHON_VERSION="$(python --version | cut -d " " -f 2 | cut -d "." -f 1-2)"
 # For example: 3.6
 CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
 # For example: https://raw.githubusercontent.com/apache/airflow/constraints-2.2.0/constraints-3.6.txt
-pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+pip install "apache-airflow[celery]==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
 
 # The Standalone command will initialise the database, make a user,
 # and start all components for you.
@@ -22,7 +22,7 @@ airflow users create \
     --role Admin \
     --email spiderman@superhero.org
 
-airflow webserver --port 8080
+# airflow webserver --port 8080
 
 # airflow scheduler
 
