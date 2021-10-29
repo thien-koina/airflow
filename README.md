@@ -1,13 +1,7 @@
 # airflow
 Develop ETL process in Airflow
 
-First run to init db
-```
-chmod +x ./airflow.sh
-./airflow.sh
-```
-
-Install Posgres
+# Install Posgres
 ```
 sudo apt update
 sudo apt install postgresql postgresql-contrib
@@ -22,17 +16,20 @@ ALTER ROLE ubuntu CREATEDB;
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to ubuntu;
 ```
 
+# Init Database
 ```
 airflow db init
 
 airflow users create \
     --username admin \
-    --firstname Peter \
-    --lastname Parker \
+    --firstname Thien \
+    --lastname Pham \
     --role Admin \
-    --email spiderman@superhero.org
+    --email thienph3@gmail.com
 
 airflow webserver --port 8080
 
 airflow scheduler
+
+airflow celery worker
 ```
