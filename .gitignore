@@ -134,5 +134,3 @@ dmypy.json
 # Airflow
 tmp/
 logs/
-airflow.db
-webserver_config.py
