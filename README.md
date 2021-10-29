@@ -21,3 +21,18 @@ ALTER ROLE ubuntu SUPERUSER;
 ALTER ROLE ubuntu CREATEDB;
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to ubuntu;
 ```
+
+```
+airflow db init
+
+airflow users create \
+    --username admin \
+    --firstname Peter \
+    --lastname Parker \
+    --role Admin \
+    --email spiderman@superhero.org
+
+airflow webserver --port 8080
+
+airflow scheduler
+```
